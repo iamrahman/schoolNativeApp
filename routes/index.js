@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import LandingScreen from "../screens/landing";
 import AuthScreen from '../screens/auth';
 import { ScreenName } from '../constants';
+import DashboardScreen from '../screens/dashboard';
 
 const Stack = createStackNavigator();
 const ApplicationRoutes = () => {
@@ -13,6 +14,7 @@ const ApplicationRoutes = () => {
       <Stack.Navigator initialRouteName=" ">
         <Stack.Screen name={ScreenName.LANDING} component={LandingScreen} />
         <Stack.Screen name={ScreenName.AUTH} component={AuthScreen} />
+        <Stack.Screen name={ScreenName.DASHBOARD} component={DashboardScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

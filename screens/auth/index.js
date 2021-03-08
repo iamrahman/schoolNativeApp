@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Text, View, StyleSheet, TextInput, Button, Image } from "react-native";
-const AuthScreen = () => {
-  const [value, onChangeText] = useState("");
+import { ScreenName } from "../../constants";
+const AuthScreen = ({navigation}) => {
+  const [formData, onChangeForm] = useState({
+    username : '',
+    password : ''
+  });
 
   return (
     <View style={styles.container}>
@@ -18,16 +22,22 @@ const AuthScreen = () => {
       <View style={styles.view}>
         <TextInput
           style={styles.inputText}
-          onChangeText={(text) => onChangeText(text)}
-          value={value}
+          onChangeText={(text) => onChangeForm({
+            ...formData,
+            username: text
+          })}
+          value={formData.username}
           placeholder="Enter Username"
         />
       </View>
       <View style={styles.view}>
         <TextInput
           style={styles.inputText}
-          onChangeText={(text) => onChangeText(text)}
-          value={value}
+          onChangeText={(text) => onChangeForm({
+            ...formData,
+            password: text,
+          })}
+          value={formData.password}
           placeholder="Enter Password"
         />
       </View>
@@ -35,7 +45,7 @@ const AuthScreen = () => {
         <Button
           title=" Login "
           color="#1A5C11"
-          onPress={() => Alert.alert("Simple Button pressed")}
+          onPress={() => navigation.navigate(ScreenName.DASHBOARD)}
         />
       </View>
     </View>
