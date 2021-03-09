@@ -8,10 +8,13 @@ import {
   Image,
   SafeAreaView,
   ScrollView,
+  TouchableOpacity,
+  Alert
 } from "react-native";
 import AttandanceBar from "../../components/attandanceBar";
 import AnnouncmentBox from "../../components/announcement";
-const DashboardScreen = () => {
+import { ScreenName } from "../../constants";
+const DashboardScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{backgroundColor: '#FFFFFF'}}>
       <ScrollView>
@@ -46,9 +49,12 @@ const DashboardScreen = () => {
           </View>
         </View>
         <View style={styles.container}>
-          <View style={styles.menuBox}>
-            <Text style={styles.text}>Teachers</Text>
-          </View>
+          <TouchableOpacity
+            onPress={() => navigation.navigate(ScreenName.TEACHERS)}>
+            <View style={styles.menuBox}>
+              <Text style={styles.text}>Teachers</Text>
+            </View>
+          </TouchableOpacity>
           <View style={styles.menuBox}>
             <Text style={styles.text}>Timetable</Text>
           </View>
