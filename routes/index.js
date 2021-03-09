@@ -6,7 +6,7 @@ import LandingScreen from "../screens/landing";
 import AuthScreen from '../screens/auth';
 import { ScreenName } from '../constants';
 import DashboardScreen from '../screens/dashboard';
-import TeachersScreen from '../screens/teachers_list';
+import TeachersScreen from '../screens/dashboard/pages/teachersList';
 
 const Stack = createStackNavigator();
 const ApplicationRoutes = () => {

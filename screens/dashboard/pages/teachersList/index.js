@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, View, Text, FlatList } from "react-native";
 import TeacherItem from "../../../../components/teacher";
 
-import { TeachersList } from "../../../../constants";
+import { TeachersList } from "../../../../constants/index";
 
 const TeachersScreen = () => {
   return (
@@ -10,7 +10,7 @@ const TeachersScreen = () => {
       <FlatList
         data={TeachersList}
         renderItem={({ item }) => <TeacherItem data={item} />}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => String(item.id)}
       />
     </View>
   );
