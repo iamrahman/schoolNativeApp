@@ -6,6 +6,7 @@ import LandingScreen from "../screens/landing";
 import AuthScreen from '../screens/auth';
 import { ScreenName } from '../constants';
 import DashboardScreen from '../screens/dashboard';
+import TeachersScreen from '../screens/dashboard/pages/teachersList';
 
 const Stack = createStackNavigator();
 const ApplicationRoutes = () => {
@@ -15,6 +16,7 @@ const ApplicationRoutes = () => {
         <Stack.Screen name={ScreenName.LANDING} component={LandingScreen} />
         <Stack.Screen name={ScreenName.AUTH} component={AuthScreen} />
         <Stack.Screen name={ScreenName.DASHBOARD} component={DashboardScreen} />
+        <Stack.Screen name={ScreenName.TEACHERS} component={TeachersScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

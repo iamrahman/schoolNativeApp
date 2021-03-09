@@ -3,17 +3,42 @@ import {
   Text,
   View,
   StyleSheet,
-  TextInput,
-  Button,
   Image,
   SafeAreaView,
   ScrollView,
+  TouchableOpacity,
+  Alert,
 } from "react-native";
 import AttandanceBar from "../../components/attandanceBar";
 import AnnouncmentBox from "../../components/announcement";
-const DashboardScreen = () => {
+import { ScreenName } from "../../constants";
+const DashboardScreen = ({ navigation }) => {
+
+  React.useEffect(
+    () =>
+      navigation.addListener("beforeRemove", (e) => {
+        // Prevent default behavior of leaving the screen
+        e.preventDefault();
+
+        // Prompt the user before leaving the screen
+        Alert.alert(
+          "Logout session?",
+          "Are you sure to end the session and leave the screen?",
+          [
+            { text: "Don't leave", style: "cancel", onPress: () => {} },
+            {
+              text: "Logout",
+              style: "destructive",
+              onPress: () => navigation.dispatch(e.data.action),
+            },
+          ]
+        );
+      }),
+    [navigation]
+  );
+
   return (
-    <SafeAreaView style={{backgroundColor: '#FFFFFF'}}>
+    <SafeAreaView style={{ backgroundColor: "#FFFFFF" }}>
       <ScrollView>
         <View style={styles.profileContainer}>
           <View>
@@ -29,10 +54,10 @@ const DashboardScreen = () => {
             <Text style={styles.name}>Anjali Sharma</Text>
           </View>
           <View>
-            <Text style={{color: 'black'}}>Class IX - A</Text>
+            <Text style={{ color: "black" }}>Class IX - A</Text>
           </View>
-          <AttandanceBar/>
-          <AnnouncmentBox/>
+          <AttandanceBar />
+          <AnnouncmentBox />
         </View>
         <View style={styles.container}>
           <View style={styles.menuBox}>
@@ -46,9 +71,13 @@ const DashboardScreen = () => {
           </View>
         </View>
         <View style={styles.container}>
-          <View style={styles.menuBox}>
-            <Text style={styles.text}>Teachers</Text>
-          </View>
+          <TouchableOpacity
+            onPress={() => navigation.navigate(ScreenName.TEACHERS)}
+          >
+            <View style={styles.menuBox}>
+              <Text style={styles.text}>Teachers</Text>
+            </View>
+          </TouchableOpacity>
           <View style={styles.menuBox}>
             <Text style={styles.text}>Timetable</Text>
           </View>
