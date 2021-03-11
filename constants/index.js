@@ -2,7 +2,8 @@ export const ScreenName = {
     LANDING : ' ',
     AUTH : 'Login',
     DASHBOARD : 'Dashboard',
-    TEACHERS: 'Teacher'
+    TEACHERS: 'Teacher',
+    ATTANDANCE: 'Attandance'
 }
 
 export const TeachersList = [{
@@ -127,3 +128,101 @@ export const TeachersList = [{
     "profile": "https://robohash.org/minusrecusandaeaccusamus.jpg?size=50x50&set=set1"
   }
 ];
+
+export const AttandanceList = [
+  {
+    id : 1,
+    status : 'not updated',
+    date : '01 December 2020'
+  },
+  {
+    id : 2,
+    status : 'present',
+    date : '02 December 2020'
+  },
+  {
+    id : 3,
+    status : 'absent',
+    date : '03 December 2020'
+  },
+  {
+    id : 4,
+    status : 'present',
+    date : '04 December 2020'
+  },
+  {
+    id : 5,
+    status : 'absent',
+    date : '05 December 2020'
+  },
+  {
+    id : 6,
+    status : 'present',
+    date : '06 December 2020'
+  },
+  {
+    id : 7,
+    status : 'absent',
+    date : '07 December 2020'
+  },
+  {
+    id : 8,
+    status : 'present',
+    date : '08 December 2020'
+  },
+  {
+    id : 9,
+    status : 'present',
+    date : '09 December 2020'
+  },
+  {
+    id : 10,
+    status : 'present',
+    date : '10 December 2020'
+  },
+  {
+    id : 11,
+    status : 'not updated',
+    date : '11 December 2020'
+  },
+  {
+    id : 12,
+    status : 'present',
+    date : '12 December 2020'
+  },
+  {
+    id : 13,
+    status : 'absent',
+    date : '13 December 2020'
+  },
+  {
+    id : 14,
+    status : 'present',
+    date : '14 December 2020'
+  },
+  {
+    id : 15,
+    status : 'absent',
+    date : '15 December 2020'
+  },
+  {
+    id : 16,
+    status : 'present',
+    date : '16 December 2020'
+  },
+  {
+    id : 17,
+    status : 'absent',
+    date : '17 December 2020'
+  },
+  {
+    id : 18,
+    status : 'present',
+    date : '18 December 2020'
+  },
+  {
+    id : 19,
+    status : 'present',
+    date : '19 December 2020'
+  },
+]
