@@ -13,7 +13,6 @@ import AttandanceBar from "../../components/attandanceBar";
 import AnnouncmentBox from "../../components/announcement";
 import { ScreenName } from "../../constants";
 const DashboardScreen = ({ navigation }) => {
-
   React.useEffect(
     () =>
       navigation.addListener("beforeRemove", (e) => {
@@ -60,9 +59,13 @@ const DashboardScreen = ({ navigation }) => {
           <AnnouncmentBox />
         </View>
         <View style={styles.container}>
-          <View style={styles.menuBox}>
-            <Text style={styles.text}>Profile</Text>
-          </View>
+          <TouchableOpacity
+            onPress={() => navigation.navigate(ScreenName.ATTANDANCE)}
+          >
+            <View style={styles.menuBox}>
+              <Text style={styles.text}>Attandance</Text>
+            </View>
+          </TouchableOpacity>
           <View style={styles.menuBox}>
             <Text style={styles.text}>Exam</Text>
           </View>
@@ -115,7 +118,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   menuBox: {
-    backgroundColor: "#2A99A2",
+    backgroundColor: "#1C5EBD",
     height: 50,
     margin: 10,
     minWidth: 100,

@@ -22,10 +22,12 @@ const TeacherItem = ({data}) => {
 const styles = StyleSheet.create({
 
     container:{
-        padding: 10,
+        padding: 1,
     },
     row: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        backgroundColor: "#fff",
+        padding: 10
     },
     fullName: {
         fontSize: 18,
