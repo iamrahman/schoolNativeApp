@@ -3,7 +3,8 @@ export const ScreenName = {
     AUTH : 'Login',
     DASHBOARD : 'Dashboard',
     TEACHERS: 'Teacher',
-    ATTANDANCE: 'Attandance'
+    ATTANDANCE: 'Attandance',
+    EXAMS: 'Exams',
 }
 
 export const TeachersList = [{
@@ -127,6 +128,32 @@ export const TeachersList = [{
     "full_name": "Ruby Astle",
     "profile": "https://robohash.org/minusrecusandaeaccusamus.jpg?size=50x50&set=set1"
   }
+];
+
+export const ExamList = [
+  {
+    id : 1,
+    name: 'First Term Examination',
+    startDate : '01 December 2020'
+  },
+  {
+    id : 2,
+    name: 'Half Yearly Examination',
+    startDate : '01 December 2020',
+    endDate: '12 January 2021'
+  },
+  {
+    id : 3,
+    name: 'Secound Term Examination',
+    startDate : '01 December 2020',
+    endDate: '12 January 2021'
+  },
+  {
+    id : 4,
+    name: 'Final Examination',
+    startDate : '01 December 2020',
+    endDate: '12 January 2021'
+  },
 ];
 
 export const AttandanceList = [

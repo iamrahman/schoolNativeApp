@@ -37,7 +37,7 @@ const DashboardScreen = ({ navigation }) => {
   );
 
   return (
-    <SafeAreaView style={{ backgroundColor: "#FFFFFF" }}>
+    <SafeAreaView style={{ backgroundColor: "#1C5EBD" }}>
       <ScrollView>
         <View style={styles.profileContainer}>
           <View>
@@ -45,7 +45,7 @@ const DashboardScreen = ({ navigation }) => {
               style={styles.profilImage}
               source={{
                 uri:
-                  "http://adeyl.com/iteach/sites/default/files/uploads/student_images/PASSPORT%20SIZE%20PHOTO%20NAFISA.jpg",
+                  "https://i.pinimg.com/originals/48/35/b5/4835b5f9c52fd733eb26fb2c2b47bdc7.jpg",
               }}
             />
           </View>
@@ -53,50 +53,45 @@ const DashboardScreen = ({ navigation }) => {
             <Text style={styles.name}>Anjali Sharma</Text>
           </View>
           <View>
-            <Text style={{ color: "black" }}>Class IX - A</Text>
+            <Text style={{ color: "#fff" }}>Class IX - A</Text>
           </View>
           <AttandanceBar />
           <AnnouncmentBox />
         </View>
-        <View style={styles.container}>
-          <TouchableOpacity
-            onPress={() => navigation.navigate(ScreenName.ATTANDANCE)}
-          >
+        <View style={styles.menuView}>
+          <View style={styles.container}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate(ScreenName.ATTANDANCE)}
+            >
+              <View style={styles.menuBox}>
+                <Text style={styles.text}>Attandance</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate(ScreenName.EXAMS)}
+            >
+              <View style={styles.menuBox}>
+                <Text style={styles.text}>Exam</Text>
+              </View>
+            </TouchableOpacity>
             <View style={styles.menuBox}>
-              <Text style={styles.text}>Attandance</Text>
+              <Text style={styles.text}>Results</Text>
             </View>
-          </TouchableOpacity>
-          <View style={styles.menuBox}>
-            <Text style={styles.text}>Exam</Text>
           </View>
-          <View style={styles.menuBox}>
-            <Text style={styles.text}>Results</Text>
-          </View>
-        </View>
-        <View style={styles.container}>
-          <TouchableOpacity
-            onPress={() => navigation.navigate(ScreenName.TEACHERS)}
-          >
+          <View style={styles.container}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate(ScreenName.TEACHERS)}
+            >
+              <View style={styles.menuBox}>
+                <Text style={styles.text}>Teachers</Text>
+              </View>
+            </TouchableOpacity>
             <View style={styles.menuBox}>
-              <Text style={styles.text}>Teachers</Text>
+              <Text style={styles.text}>Assignment</Text>
             </View>
-          </TouchableOpacity>
-          <View style={styles.menuBox}>
-            <Text style={styles.text}>Timetable</Text>
-          </View>
-          <View style={styles.menuBox}>
-            <Text style={styles.text}>Help</Text>
-          </View>
-        </View>
-        <View style={styles.container}>
-          <View style={styles.menuBox}>
-            <Text style={styles.text}>Assignment</Text>
-          </View>
-          <View style={styles.menuBox}>
-            <Text style={styles.text}>Leaves</Text>
-          </View>
-          <View style={styles.menuBox}>
-            <Text style={styles.text}>Holidays</Text>
+            <View style={styles.menuBox}>
+              <Text style={styles.text}>Holidays</Text>
+            </View>
           </View>
         </View>
       </ScrollView>
@@ -111,6 +106,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "stretch",
   },
+  menuView: {
+    backgroundColor: "#fff",
+    borderTopLeftRadius: 25,
+    borderTopEndRadius: 25,
+    flex: 1,
+  },
   profileContainer: {
     flex: 1,
     flexDirection: "column",
@@ -118,19 +119,19 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   menuBox: {
-    backgroundColor: "#1C5EBD",
+    backgroundColor: "orangered",
     height: 50,
     margin: 10,
     minWidth: 100,
     borderRadius: 10,
   },
   text: {
-    color: "#FFFFFF",
+    color: "#fff",
     textAlign: "center",
     padding: 15,
   },
   name: {
-    color: "#000000",
+    color: "#fff",
     paddingTop: 10,
     paddingBottom: 10,
     fontWeight: "bold",

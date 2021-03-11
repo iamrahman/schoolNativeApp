@@ -1,11 +1,10 @@
 import React from "react";
 import { StyleSheet, View, Text, FlatList } from "react-native";
-import AttandanceBar from "../../../../components/attandanceBar";
-import AttandanceStatus from "../../../../components/attandanceStatus";
+import ExamBox from "../../../../components/examBox";
 
-import { AttandanceList } from "../../../../constants/index";
+import { ExamList } from "../../../../constants/index";
 
-const AttandanceScreen = () => {
+const ExamScreen = () => {
   return (
     <View style={styles.container}>
       <View
@@ -18,22 +17,29 @@ const AttandanceScreen = () => {
         <Text
           style={{
             textAlign: "center",
+            fontSize: 15,
+            padding: 5,
+            color: "#FFFFFF",
+          }}
+        >
+          Exams ession
+        </Text>
+        <Text
+          style={{
+            textAlign: "center",
             fontSize: 60,
             fontWeight: "500",
             color: "#FFFFFF",
             fontFamily: "serif",
           }}
         >
-          83.34%
-        </Text>
-        <Text style={{ textAlign: "center", fontSize: 15, padding: 20, color: '#FFFFFF' }}>
-          Students can able to see the attandance record of last 30 working days
+          2020-21
         </Text>
       </View>
       <View style={styles.listView}>
         <FlatList
-          data={AttandanceList}
-          renderItem={({ item }) => <AttandanceStatus data={item} />}
+          data={ExamList}
+          renderItem={({ item }) => <ExamBox data={item} />}
           keyExtractor={(item) => String(item.id)}
         />
       </View>
@@ -44,7 +50,7 @@ const AttandanceScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1C5EBD',
+    backgroundColor: "#1C5EBD",
   },
   item: {
     padding: 10,
@@ -62,4 +68,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AttandanceScreen;
+export default ExamScreen;
