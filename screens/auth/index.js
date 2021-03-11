@@ -79,12 +79,12 @@ const styles = StyleSheet.create({
   },
   inputText: {
     height: 55,
-    minWidth: 350,
     borderColor: "gray",
     borderWidth: 1,
     paddingLeft: 15,
     borderRadius: 10,
-    marginTop: 15,
+    marginTop: 20,
+    minWidth: 300
   },
   view: {
     alignItems: "center",
@@ -94,10 +94,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 15,
+    marginTop: 25,
     borderRadius: 10,
     padding: 10,
-    margin: 20,
+    margin: 45,
     height: 50,
     borderRadius: 20,
     backgroundColor: '#1C5EBD'

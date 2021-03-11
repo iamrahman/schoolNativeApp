@@ -34,13 +34,18 @@ const AttandanceStatus = ({ data }) => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 2,
+    padding: 3,
   },
   row: {
     flexDirection: "row",
-    padding: 5,
-    backgroundColor: '#FFFFFF',
-    borderRadius: 15
+    padding: 7,
+    backgroundColor: '#EAF1FF',
+    borderRadius: 15,
+    shadowColor: '#000',
+    shadowOffset: { width: 2, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    elevation: 2,
   },
   fullName: {
     fontSize: 12,
