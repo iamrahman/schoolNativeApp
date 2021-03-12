@@ -1,19 +1,24 @@
 import React, { useState } from "react";
-import { Text, View, StyleSheet, TextInput, Button, Image } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  TextInput,
+  Button,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import { ScreenName } from "../../constants";
-const AuthScreen = ({navigation}) => {
+const AuthScreen = ({ navigation }) => {
   const [formData, onChangeForm] = useState({
-    username : '',
-    password : ''
+    username: "",
+    password: "",
   });
 
   return (
     <View style={styles.container}>
       <View style={{ alignItems: "center" }}>
-        <Image
-          source={require("../../assets/logo.png")}
-          style={styles.logo}
-        />
+        <Image source={require("../../assets/logo.png")} style={styles.logo} />
       </View>
       <View style={styles.view}>
         <Text style={styles.title}>Delhi Public School</Text>
@@ -22,10 +27,12 @@ const AuthScreen = ({navigation}) => {
       <View style={styles.view}>
         <TextInput
           style={styles.inputText}
-          onChangeText={(text) => onChangeForm({
-            ...formData,
-            username: text
-          })}
+          onChangeText={(text) =>
+            onChangeForm({
+              ...formData,
+              username: text,
+            })
+          }
           value={formData.username}
           placeholder="Enter Username"
         />
@@ -33,21 +40,21 @@ const AuthScreen = ({navigation}) => {
       <View style={styles.view}>
         <TextInput
           style={styles.inputText}
-          onChangeText={(text) => onChangeForm({
-            ...formData,
-            password: text,
-          })}
+          onChangeText={(text) =>
+            onChangeForm({
+              ...formData,
+              password: text,
+            })
+          }
           value={formData.password}
           placeholder="Enter Password"
         />
       </View>
-      <View style={styles.btn}>
-        <Button
-          title=" Login "
-          color="#1A5C11"
-          onPress={() => navigation.navigate(ScreenName.DASHBOARD)}
-        />
-      </View>
+      <TouchableOpacity onPress={() => navigation.navigate(ScreenName.DASHBOARD)}>
+        <View style={styles.btn}>
+          <Text style={{color: '#fff', fontSize: 17}}>Login</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -71,13 +78,13 @@ const styles = StyleSheet.create({
     color: "#150E80",
   },
   inputText: {
-    height: 40,
-    minWidth: 250,
+    height: 55,
     borderColor: "gray",
     borderWidth: 1,
-    paddingLeft: 10,
+    paddingLeft: 15,
     borderRadius: 10,
-    marginTop: 15,
+    marginTop: 20,
+    minWidth: 300
   },
   view: {
     alignItems: "center",
@@ -87,13 +94,18 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 15,
+    marginTop: 25,
     borderRadius: 10,
+    padding: 10,
+    margin: 45,
+    height: 50,
+    borderRadius: 20,
+    backgroundColor: '#1C5EBD'
   },
   logo: {
     width: 80,
-    height: 100
-  }
+    height: 100,
+  },
 });
 
 export default AuthScreen;

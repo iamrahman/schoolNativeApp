@@ -1,12 +1,14 @@
-import React from 'react';
+import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 // components
 import LandingScreen from "../screens/landing";
-import AuthScreen from '../screens/auth';
-import { ScreenName } from '../constants';
-import DashboardScreen from '../screens/dashboard';
-import TeachersScreen from '../screens/teachers_list';
+import AuthScreen from "../screens/auth";
+import { ScreenName } from "../constants";
+import DashboardScreen from "../screens/dashboard";
+import TeachersScreen from "../screens/dashboard/pages/teachersList";
+import AttandanceScreen from "../screens/dashboard/pages/attandance";
+import ExamScreen from "../screens/dashboard/pages/exams";
 
 const Stack = createStackNavigator();
 const ApplicationRoutes = () => {
@@ -15,11 +17,60 @@ const ApplicationRoutes = () => {
       <Stack.Navigator initialRouteName=" ">
         <Stack.Screen name={ScreenName.LANDING} component={LandingScreen} />
         <Stack.Screen name={ScreenName.AUTH} component={AuthScreen} />
-        <Stack.Screen name={ScreenName.DASHBOARD} component={DashboardScreen} />
-        <Stack.Screen name={ScreenName.TEACHERS} component={TeachersScreen}/>
+        <Stack.Screen
+          name={ScreenName.DASHBOARD}
+          component={DashboardScreen}
+          options={{
+            title: "",
+            headerStyle: {
+              elevation: 0,
+              shadowOpacity: 0, // this will hide the shadow of navbar
+              backgroundColor: "#1C5EBD",
+            },
+            headerTintColor: "#fff",
+          }}
+        />
+        <Stack.Screen name={ScreenName.TEACHERS} component={TeachersScreen} />
+        <Stack.Screen
+          name={ScreenName.ATTANDANCE}
+          component={AttandanceScreen}
+          options={{
+            title: "",
+            headerStyle: {
+              elevation: 0,
+              shadowOpacity: 0, // this will hide the shadow of navbar
+              backgroundColor: "#1C5EBD",
+            },
+            headerTintColor: "#fff",
+          }}
+        />
+        <Stack.Screen
+          name={ScreenName.EXAMS}
+          component={ExamScreen}
+          options={{
+            title: "",
+            headerStyle: {
+              elevation: 0,
+              shadowOpacity: 0, // this will hide the shadow of navbar
+              backgroundColor: "#1C5EBD",
+            },
+            headerTintColor: "#fff",
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
+
+// options={{
+//   title: " ",
+//   headerStyle: {
+//     backgroundColor: "#f4511e",
+//   },
+//   headerTintColor: "#fff",
+//   headerTitleStyle: {
+//     fontWeight: "bold",
+//   },
+// }}
 
 export default ApplicationRoutes;

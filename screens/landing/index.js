@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Button, StyleSheet, SafeAreaView, Image } from "react-native";
+import { View, Text, Button, StyleSheet, SafeAreaView, Image, TouchableOpacity } from "react-native";
 import { ScreenName } from "../../constants";
 
 const LandingScreen = ({ navigation }) => {
@@ -15,14 +15,11 @@ const LandingScreen = ({ navigation }) => {
         <Text style={styles.title}>Delhi Public School</Text>
         <Text style={styles.subTitle}>School Management System</Text>
       </View>
-      <View style={{ padding: 30 }}>
-        <Button
-          title="Start"
-          style={styles.btn}
-          color="#1A5C11"
-          onPress={() => navigation.navigate(ScreenName.AUTH)}
-        />
-      </View>
+      <TouchableOpacity onPress={() => navigation.navigate(ScreenName.AUTH)}>
+        <View style={styles.btn}>
+          <Text style={{color: '#fff', fontSize: 17}}>Start</Text>
+        </View>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -46,9 +43,21 @@ const styles = StyleSheet.create({
     color: '#150E80'
   },
   logo: {
-    width: 80,
-    height: 100
-  }
+    width: 100,
+    height: 130
+  },
+  btn: {
+    borderRadius: 10,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 15,
+    borderRadius: 10,
+    padding: 10,
+    margin: 20,
+    height: 50,
+    borderRadius: 20,
+    backgroundColor: '#1C5EBD'
+  },
 });
 
 export default LandingScreen;
