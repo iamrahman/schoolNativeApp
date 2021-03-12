@@ -30,7 +30,18 @@ const ApplicationRoutes = () => {
             headerTintColor: "#fff",
           }}
         />
-        <Stack.Screen name={ScreenName.TEACHERS} component={TeachersScreen} />
+        <Stack.Screen 
+          name={ScreenName.TEACHERS} 
+          component={TeachersScreen} 
+          options={{
+            title: "",
+            headerStyle:{
+              elevation:0,
+              shadowOpacity:0,
+              backgroundColor: "#1C5EBD"
+            },
+            headerTintColor: "#FFF"
+          }}/>
         <Stack.Screen
           name={ScreenName.ATTANDANCE}
           component={AttandanceScreen}
