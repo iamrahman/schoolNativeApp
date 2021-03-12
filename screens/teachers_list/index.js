@@ -5,6 +5,13 @@ import TeacherItem from '../../components/teacher';
 import {TeachersList} from '../../constants';
 
 const TeachersScreen = () => {
+  if(TeachersList === undefined || TeachersList.length == 0){
+    return(
+      <View style={styles.noItemContainer}>
+        <Text style={styles.noItemTitle}>No Teachers</Text>
+      </View>
+    )
+  }
     return(
         <View style={styles.container}>
             <FlatList
@@ -20,6 +27,11 @@ const styles = StyleSheet.create({
     container: {
      flex: 1,
     },
+    noItemContainer:{
+      flex: 1, 
+      justifyContent: 'center', 
+      alignItems:'center'
+    },
     item: {
       padding: 10,
       fontSize: 18,
@@ -32,6 +44,10 @@ const styles = StyleSheet.create({
       backgroundColor: "#070E96",
       marginTop: 30,
     },
+    noItemTitle: {
+      fontSize: 18,
+      fontWeight: '300'
+    }
   });
   
 
