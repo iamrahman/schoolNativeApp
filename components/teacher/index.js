@@ -26,8 +26,15 @@ const styles = StyleSheet.create({
     },
     row: {
         flexDirection: 'row',
-        backgroundColor: "#fff",
-        padding: 10
+        backgroundColor: "#EAF1FF",
+        padding: 7,
+        borderRadius: 15,
+        shadowColor: '#000',
+        shadowOffset: { width: 2, height: 2 },
+        shadowOpacity: 0.8,
+        shadowRadius: 2,
+        elevation: 2,
+        margin: 2
     },
     fullName: {
         fontSize: 18,
@@ -41,8 +48,8 @@ const styles = StyleSheet.create({
     
     profilImage: {
       borderRadius: 50,
-      height: 60,
-      width: 60,
+      height: 40,
+      width: 40,
       backgroundColor: "#12B0E8",
     },
   });
