@@ -17,12 +17,12 @@ const ExamScreen = () => {
         <Text
           style={{
             textAlign: "center",
-            fontSize: 15,
+            fontSize: 17,
             padding: 5,
             color: "#FFFFFF",
           }}
         >
-          Exams ession
+          Year
         </Text>
         <Text
           style={{
@@ -41,6 +41,7 @@ const ExamScreen = () => {
           data={ExamList}
           renderItem={({ item }) => <ExamBox data={item} />}
           keyExtractor={(item) => String(item.id)}
+          showsVerticalScrollIndicator={false}
         />
       </View>
     </View>

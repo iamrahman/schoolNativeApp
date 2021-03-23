@@ -1,21 +1,40 @@
-import React from "react";
-import { StyleSheet, View, Text, FlatList } from "react-native";
+import React, { useState } from "react";
+import {
+  StyleSheet,
+  View,
+  Text,
+  FlatList,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import TeacherItem from "../../../../components/teacher";
 
 import { TeachersList } from "../../../../constants/index";
 
 const TeachersScreen = () => {
+  //const [activeTeacher, setActiveTeacher] = useState(TeachersList[0]);
+
   return (
     <View style={styles.container}>
-        <View style={styles.headerContainer}>
-
-        </View>
-        <View style={styles.listView}>
-          <FlatList
-            data={TeachersList}
-            renderItem={({ item }) => <TeacherItem data={item} />}
-            keyExtractor={(item) => String(item.id)}/>
-        </View>
+      <View style={styles.headerContainer}>
+        {/* <Image
+          style={styles.profilImage}
+          source={{ uri: activeTeacher.profile }}
+        /> */}
+        <Text style={styles.title}>School Teachers</Text>
+      </View>
+      <View style={styles.listView}>
+        <FlatList
+          data={TeachersList}
+          renderItem={({ item }) => (
+            // <TouchableOpacity onPress={(item) => setActiveTeacher(item)}>
+            <TeacherItem data={item} />
+            // </TouchableOpacity>
+          )}
+          keyExtractor={(item) => String(item.id)}
+          showsVerticalScrollIndicator={false}
+        />
+      </View>
     </View>
   );
 };
@@ -23,12 +42,19 @@ const TeachersScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1C5EBD',
+    backgroundColor: "#1C5EBD",
   },
-  headerContainer:{
-    minHeight: 200,
-    justifyContent: 'center',
-    alignItems:'center'
+  headerContainer: {
+    minHeight: 100,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  title: {
+    textAlign: "center",
+    fontSize: 30,
+    fontWeight: "500",
+    color: "#FFFFFF",
+    fontFamily: "serif",
   },
   profilImage: {
     borderRadius: 50,
@@ -36,7 +62,7 @@ const styles = StyleSheet.create({
     width: 100,
     backgroundColor: "#070E96",
     marginTop: 30,
-  }, 
+  },
   listView: {
     backgroundColor: "#FFFFFF",
     paddingLeft: 20,

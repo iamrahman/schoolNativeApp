@@ -1,6 +1,6 @@
 import React from "react";
-import { Text } from "react-native";
-import { View } from "native-base";
+import { Text, View } from "react-native";
+
 const AuthScreen = () => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>

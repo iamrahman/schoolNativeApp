@@ -35,6 +35,7 @@ const AttandanceScreen = () => {
           data={AttandanceList}
           renderItem={({ item }) => <AttandanceStatus data={item} />}
           keyExtractor={(item) => String(item.id)}
+          showsVerticalScrollIndicator={false}
         />
       </View>
     </View>

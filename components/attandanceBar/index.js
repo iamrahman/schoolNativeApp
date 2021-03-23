@@ -1,6 +1,6 @@
 import React from "react";
-import { Text } from "react-native";
-import { View } from "native-base";
+import { Text, View } from "react-native";
+
 const AttandanceBar = () => {
   return (
     <View>
@@ -11,12 +11,12 @@ const AttandanceBar = () => {
           width: 330,
           marginTop: 10,
           borderRadius: 5,
-          backgroundColor: "#D9D9D9",
+          backgroundColor: "#FFFFFF",
           elevation: 10,
         }}
       >
-        <View style={{ height: 20, width: 297, backgroundColor: "#11B238", borderRadius: 5 }}>
-          <Text style={{ textAlign: "center", color: "white" }}>90%</Text>
+        <View style={{ height: 20, width: 274, backgroundColor: "#11B238", borderRadius: 5 }}>
+          <Text style={{ textAlign: "center", color: "white" }}>83.34%</Text>
         </View>
       </View>
     </View>

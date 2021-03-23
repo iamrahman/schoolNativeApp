@@ -74,9 +74,13 @@ const DashboardScreen = ({ navigation }) => {
                 <Text style={styles.text}>Exam</Text>
               </View>
             </TouchableOpacity>
-            <View style={styles.menuBox}>
-              <Text style={styles.text}>Results</Text>
-            </View>
+            <TouchableOpacity
+              onPress={() => navigation.navigate(ScreenName.RESULTS)}
+            >
+              <View style={styles.menuBox}>
+                <Text style={styles.text}>Results</Text>
+              </View>
+            </TouchableOpacity>
           </View>
           <View style={styles.container}>
             <TouchableOpacity

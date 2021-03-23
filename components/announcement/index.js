@@ -1,6 +1,5 @@
 import React from "react";
-import { Text } from "react-native";
-import { View } from "native-base";
+import { Text, View } from "react-native";
 const AnnouncmentBox = () => {
   return (
     <View
