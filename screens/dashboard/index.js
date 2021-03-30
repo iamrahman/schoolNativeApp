@@ -12,6 +12,9 @@ import {
 import AttandanceBar from "../../components/attandanceBar";
 import AnnouncmentBox from "../../components/announcement";
 import { ScreenName } from "../../constants";
+import Font from "react-native-vector-icons/FontAwesome";
+import MaterialIcon from "react-native-vector-icons/MaterialCommunityIcons";
+
 const DashboardScreen = ({ navigation }) => {
   React.useEffect(
     () =>
@@ -64,21 +67,32 @@ const DashboardScreen = ({ navigation }) => {
               onPress={() => navigation.navigate(ScreenName.ATTANDANCE)}
             >
               <View style={styles.menuBox}>
-                <Text style={styles.text}>Attandance</Text>
+                <Text style={styles.text}><MaterialIcon name="calendar-check" style={{ color: "#fff" }}
+                  size={17} />Attandance</Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => navigation.navigate(ScreenName.EXAMS)}
             >
               <View style={styles.menuBox}>
-                <Text style={styles.text}>Exam</Text>
+                <Text style={styles.text}>
+                  <Font
+                    name="pencil-square-o"
+                    style={{ color: "#fff" }}
+                    size={17}
+                  />
+                  {" Exam"}
+                </Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => navigation.navigate(ScreenName.RESULTS)}
             >
               <View style={styles.menuBox}>
-                <Text style={styles.text}>Results</Text>
+                <Text style={styles.text}>
+                  <Font name="bar-chart" style={{ color: "#fff" }} size={17} />
+                  {" Result"}
+                </Text>
               </View>
             </TouchableOpacity>
           </View>
@@ -87,14 +101,21 @@ const DashboardScreen = ({ navigation }) => {
               onPress={() => navigation.navigate(ScreenName.TEACHERS)}
             >
               <View style={styles.menuBox}>
-                <Text style={styles.text}>Teachers</Text>
+                <Text style={styles.text}>
+                  <MaterialIcon name="account-group" size={17} /> Teacher
+                </Text>
               </View>
             </TouchableOpacity>
             <View style={styles.menuBox}>
-              <Text style={styles.text}>Assignment</Text>
+              <Text style={styles.text}>
+                <Font name="paperclip" style={{ color: "#fff" }} size={17} />
+                {" Files"}
+              </Text>
             </View>
             <View style={styles.menuBox}>
-              <Text style={styles.text}>Holidays</Text>
+              <Text style={styles.text}>
+                <MaterialIcon name="beach" size={17} /> Holiday
+              </Text>
             </View>
           </View>
         </View>

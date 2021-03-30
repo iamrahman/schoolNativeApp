@@ -16,8 +16,32 @@ const ApplicationRoutes = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName=" ">
-        <Stack.Screen name={ScreenName.LANDING} component={LandingScreen} />
-        <Stack.Screen name={ScreenName.AUTH} component={AuthScreen} />
+        <Stack.Screen
+          name={ScreenName.LANDING}
+          component={LandingScreen}
+          options={{
+            title: "",
+            headerStyle: {
+              elevation: 0,
+              shadowOpacity: 0, // this will hide the shadow of navbar
+              backgroundColor: "#FFF",
+            },
+            headerTintColor: "#fff",
+          }}
+        />
+        <Stack.Screen
+          name={ScreenName.AUTH}
+          component={AuthScreen}
+          options={{
+            title: "",
+            headerStyle: {
+              elevation: 0,
+              shadowOpacity: 0, // this will hide the shadow of navbar
+              backgroundColor: "#FFF",
+            },
+            headerTintColor: "#1C5EBD",
+          }}
+        />
         <Stack.Screen
           name={ScreenName.DASHBOARD}
           component={DashboardScreen}
@@ -31,18 +55,19 @@ const ApplicationRoutes = () => {
             headerTintColor: "#fff",
           }}
         />
-        <Stack.Screen 
-          name={ScreenName.TEACHERS} 
-          component={TeachersScreen} 
+        <Stack.Screen
+          name={ScreenName.TEACHERS}
+          component={TeachersScreen}
           options={{
             title: "",
-            headerStyle:{
-              elevation:0,
-              shadowOpacity:0,
-              backgroundColor: "#1C5EBD"
+            headerStyle: {
+              elevation: 0,
+              shadowOpacity: 0,
+              backgroundColor: "#1C5EBD",
             },
-            headerTintColor: "#FFF"
-          }}/>
+            headerTintColor: "#FFF",
+          }}
+        />
         <Stack.Screen
           name={ScreenName.ATTANDANCE}
           component={AttandanceScreen}

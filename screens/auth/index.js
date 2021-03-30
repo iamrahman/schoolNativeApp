@@ -9,6 +9,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { ScreenName } from "../../constants";
+import Font from "react-native-vector-icons/FontAwesome";
+
 const AuthScreen = ({ navigation }) => {
   const [formData, onChangeForm] = useState({
     username: "",
@@ -50,9 +52,13 @@ const AuthScreen = ({ navigation }) => {
           placeholder="Enter Password"
         />
       </View>
-      <TouchableOpacity onPress={() => navigation.navigate(ScreenName.DASHBOARD)}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate(ScreenName.DASHBOARD)}
+      >
         <View style={styles.btn}>
-          <Text style={{color: '#fff', fontSize: 17}}>Login</Text>
+          <Text style={{ color: "#fff", fontSize: 17 }}>
+            <Font name="sign-in" style={{ color: "#fff" }} size={17} /> Login
+          </Text>
         </View>
       </TouchableOpacity>
     </View>
@@ -84,7 +90,7 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     borderRadius: 10,
     marginTop: 20,
-    minWidth: 300
+    minWidth: 300,
   },
   view: {
     alignItems: "center",
@@ -100,7 +106,7 @@ const styles = StyleSheet.create({
     margin: 45,
     height: 50,
     borderRadius: 20,
-    backgroundColor: '#1C5EBD'
+    backgroundColor: "#1C5EBD",
   },
   logo: {
     width: 80,
