@@ -59,7 +59,7 @@ const DashboardScreen = ({ navigation }) => {
             <Text style={{ color: "#fff" }}>Class IX - A</Text>
           </View>
           <AttandanceBar />
-          <AnnouncmentBox />
+          {/* <AnnouncmentBox /> */}
         </View>
         <View style={styles.menuView}>
           <View style={styles.container}>
@@ -67,32 +67,20 @@ const DashboardScreen = ({ navigation }) => {
               onPress={() => navigation.navigate(ScreenName.ATTANDANCE)}
             >
               <View style={styles.menuBox}>
-                <Text style={styles.text}><MaterialIcon name="calendar-check" style={{ color: "#fff" }}
-                  size={17} />Attandance</Text>
+                <MaterialIcon
+                  name="calendar-check"
+                  style={styles.icon}
+                  size={30}
+                />
+                <Text style={styles.text}>Attandance</Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => navigation.navigate(ScreenName.EXAMS)}
             >
               <View style={styles.menuBox}>
-                <Text style={styles.text}>
-                  <Font
-                    name="pencil-square-o"
-                    style={{ color: "#fff" }}
-                    size={17}
-                  />
-                  {" Exam"}
-                </Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => navigation.navigate(ScreenName.RESULTS)}
-            >
-              <View style={styles.menuBox}>
-                <Text style={styles.text}>
-                  <Font name="bar-chart" style={{ color: "#fff" }} size={17} />
-                  {" Result"}
-                </Text>
+                <Font name="pencil-square-o" style={styles.icon} size={30} />
+                <Text style={styles.text}>Exam</Text>
               </View>
             </TouchableOpacity>
           </View>
@@ -101,21 +89,41 @@ const DashboardScreen = ({ navigation }) => {
               onPress={() => navigation.navigate(ScreenName.TEACHERS)}
             >
               <View style={styles.menuBox}>
-                <Text style={styles.text}>
-                  <MaterialIcon name="account-group" size={17} /> Teacher
-                </Text>
+                <MaterialIcon
+                  name="account-group"
+                  style={styles.icon}
+                  size={30}
+                />
+                <Text style={styles.text}>Teacher</Text>
               </View>
             </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate(ScreenName.RESULTS)}
+            >
+              <View style={styles.menuBox}>
+                <Font name="bar-chart" style={styles.icon} size={30} />
+                <Text style={styles.text}>Result</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.container}>
             <View style={styles.menuBox}>
-              <Text style={styles.text}>
-                <Font name="paperclip" style={{ color: "#fff" }} size={17} />
-                {" Files"}
-              </Text>
+              <Font name="wechat" style={styles.icon} size={30} />
+              <Text style={styles.text}>Messages</Text>
             </View>
             <View style={styles.menuBox}>
-              <Text style={styles.text}>
-                <MaterialIcon name="beach" size={17} /> Holiday
-              </Text>
+              <MaterialIcon name="beach" style={styles.icon} size={30} />
+              <Text style={styles.text}>Holidays</Text>
+            </View>
+          </View>
+          <View style={styles.container}>
+            <View style={styles.menuBox}>
+              <Font name="paperclip" style={styles.icon} size={30} />
+              <Text style={styles.text}>Files</Text>
+            </View>
+            <View style={styles.menuBox}>
+              <Font name="phone" style={styles.icon} size={30} />
+              <Text style={styles.text}>Contact</Text>
             </View>
           </View>
         </View>
@@ -126,16 +134,18 @@ const DashboardScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "stretch",
   },
   menuView: {
     backgroundColor: "#fff",
+    marginTop: 40,
     borderTopLeftRadius: 25,
     borderTopEndRadius: 25,
     flex: 1,
+    height: 500,
+    paddingTop: 20,
   },
   profileContainer: {
     flex: 1,
@@ -145,15 +155,21 @@ const styles = StyleSheet.create({
   },
   menuBox: {
     backgroundColor: "orangered",
-    height: 50,
+    height: 80,
     margin: 10,
-    minWidth: 100,
+    minWidth: 160,
     borderRadius: 10,
+  },
+  icon: {
+    color: "#fff",
+    textAlign: "center",
+    paddingTop: 10,
   },
   text: {
     color: "#fff",
     textAlign: "center",
-    padding: 15,
+    fontSize: 17,
+    fontWeight: "bold",
   },
   name: {
     color: "#fff",

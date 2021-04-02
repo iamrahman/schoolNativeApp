@@ -1,6 +1,6 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import { createStackNavigator, CardStyleInterpolators } from "@react-navigation/stack";
 // components
 import LandingScreen from "../screens/landing";
 import AuthScreen from "../screens/auth";
@@ -10,12 +10,21 @@ import TeachersScreen from "../screens/dashboard/pages/teachersList";
 import AttandanceScreen from "../screens/dashboard/pages/attandance";
 import ExamScreen from "../screens/dashboard/pages/exams";
 import ResultsScreen from "../screens/dashboard/pages/results";
+//import { Easing } from "react-native-reanimated";
 
 const Stack = createStackNavigator();
+
 const ApplicationRoutes = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName=" ">
+      <Stack.Navigator
+        screenOptions={{
+          gestureEnabled: true,
+          gestureDirection: "horizontal",
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}
+        initialRouteName={ScreenName.LANDING}
+      >
         <Stack.Screen
           name={ScreenName.LANDING}
           component={LandingScreen}
