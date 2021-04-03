@@ -1,16 +1,16 @@
 import React from "react";
 
 import { StyleSheet, View, Text, FlatList } from "react-native";
-import AttandanceStatus from "../../../../components/attandanceStatus";
+import EventCard from "../../../../components/EventCard";
 
-import { AttandanceList, theme } from "../../../../constants/index";
+import { EventList, theme } from "../../../../constants/index";
 
-const AttandanceScreen = () => {
+const EventScreen = () => {
   return (
     <View style={styles.container}>
       <View
         style={{
-          minHeight: 200,
+          minHeight: 120,
           justifyContent: "center",
           alignItems: "center",
         }}
@@ -18,22 +18,29 @@ const AttandanceScreen = () => {
         <Text
           style={{
             textAlign: "center",
-            fontSize: 60,
+            fontSize: 18,
+            padding: 5,
+            color: "#FFFFFF",
+          }}
+        >
+          School Events
+        </Text>
+        <Text
+          style={{
+            textAlign: "center",
+            fontSize: 45,
             fontWeight: "500",
             color: "#FFFFFF",
             fontFamily: "serif",
           }}
         >
-          83.34%
-        </Text>
-        <Text style={{ textAlign: "center", fontSize: 15, padding: 20, color: theme.white }}>
-          Students can able to see the attandance record of last 30 working days
+          2020-21
         </Text>
       </View>
       <View style={styles.listView}>
         <FlatList
-          data={AttandanceList}
-          renderItem={({ item }) => <AttandanceStatus data={item} />}
+          data={EventList}
+          renderItem={({ item }) => <EventCard data={item} />}
           keyExtractor={(item) => String(item.id)}
           showsVerticalScrollIndicator={false}
         />
@@ -53,14 +60,14 @@ const styles = StyleSheet.create({
     height: 44,
   },
   listView: {
-    backgroundColor: theme.primarylight,
+    backgroundColor: theme.white,
     paddingLeft: 20,
     paddingRight: 20,
-    paddingTop: 10,
+    paddingTop: 20,
     flex: 1,
     borderTopLeftRadius: 30,
     borderTopEndRadius: 30,
   },
 });
 
-export default AttandanceScreen;
+export default EventScreen;

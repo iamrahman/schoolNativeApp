@@ -10,6 +10,7 @@ import TeachersScreen from "../screens/dashboard/pages/teachersList";
 import AttandanceScreen from "../screens/dashboard/pages/attandance";
 import ExamScreen from "../screens/dashboard/pages/exams";
 import ResultsScreen from "../screens/dashboard/pages/results";
+import EventScreen from "../screens/dashboard/pages/events";
 //import { Easing } from "react-native-reanimated";
 
 const Stack = createStackNavigator();
@@ -33,7 +34,7 @@ const ApplicationRoutes = () => {
             headerStyle: {
               elevation: 0,
               shadowOpacity: 0, // this will hide the shadow of navbar
-              backgroundColor: "#FFF",
+              backgroundColor: theme.primarylight,
             },
             headerTintColor: "#fff",
           }}
@@ -46,7 +47,7 @@ const ApplicationRoutes = () => {
             headerStyle: {
               elevation: 0,
               shadowOpacity: 0, // this will hide the shadow of navbar
-              backgroundColor: "#FFF",
+              backgroundColor: theme.primarylight,
             },
             headerTintColor: theme.primary,
           }}
@@ -106,6 +107,19 @@ const ApplicationRoutes = () => {
         <Stack.Screen
           name={ScreenName.RESULTS}
           component={ResultsScreen}
+          options={{
+            title: "",
+            headerStyle: {
+              elevation: 0,
+              shadowOpacity: 0, // this will hide the shadow of navbar
+              backgroundColor: theme.primary,
+            },
+            headerTintColor: "#fff",
+          }}
+        />
+        <Stack.Screen
+          name={ScreenName.EVENTS}
+          component={EventScreen}
           options={{
             title: "",
             headerStyle: {

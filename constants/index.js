@@ -6,12 +6,14 @@ export const ScreenName = {
   ATTANDANCE: "Attandance",
   EXAMS: "Exams",
   RESULTS: "Results",
+  EVENTS: "Events"
 };
 
 export const theme = {
   primary : "#7868e6",
   secondry: "#f34",
-  white: '#FFFFFF'
+  primarylight: "#F3F0FC",
+  white: '#FFFFFF',
 }
 
 export const TeachersList = [
@@ -352,5 +354,34 @@ export const ResultsList = [
     max: 100,
     obtained: 84,
     min: 40
+  },
+];
+
+export const EventList = [
+  {
+    id: 1,
+    value: 1,
+    name: "Annual Sports",
+    image_url : "https://previews.123rf.com/images/krailurk/krailurk1301/krailurk130100090/17678705-running-competition-on-primary-school.jpg",
+    label: "First Term Examination",
+    startDate: "01 December 2020",
+  },
+  {
+    id: 2,
+    value: 2,
+    name: "Annual Cultural Festival",
+    label: "Half Yearly Examination",
+    image_url : "https://i.pinimg.com/originals/b1/44/d3/b144d33674d5ba6f68d3eef6ba7e19f1.jpg",
+    startDate: "01 December 2020",
+    endDate: "12 January 2021",
+  },
+  {
+    id: 3,
+    value: 3,
+    name: "Chess Competition",
+    label: "Secound Term Examination",
+    image_url : "https://images.chesscomfiles.com/uploads/v1/article/17623.87bb05cd.668x375o.47d81802f1eb@2x.jpeg",
+    startDate: "01 December 2020",
+    endDate: "12 January 2021",
   },
 ];

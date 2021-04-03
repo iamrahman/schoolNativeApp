@@ -8,7 +8,7 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import { ScreenName } from "../../constants";
+import { ScreenName, theme } from "../../constants";
 import Font from "react-native-vector-icons/FontAwesome";
 
 const AuthScreen = ({ navigation }) => {
@@ -68,7 +68,7 @@ const AuthScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: theme.primarylight,
     justifyContent: "center",
   },
   title: {
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
   subTitle: {
     textAlign: "center",
     fontSize: 14,
-    color: "#150E80",
+    color: theme.secondry,
   },
   inputText: {
     height: 55,
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     margin: 45,
     height: 50,
     borderRadius: 20,
-    backgroundColor: "#1C5EBD",
+    backgroundColor: theme.primary,
   },
   logo: {
     width: 80,

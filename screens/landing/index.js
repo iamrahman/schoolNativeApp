@@ -1,7 +1,7 @@
 import React from "react";
 
 import { View, Text, Button, StyleSheet, SafeAreaView, Image, TouchableOpacity } from "react-native";
-import { ScreenName } from "../../constants";
+import { ScreenName, theme } from "../../constants";
 
 const LandingScreen = ({ navigation }) => {
   return (
@@ -27,21 +27,21 @@ const LandingScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: theme.primarylight,
     justifyContent: "center",
   },
   title: {
     textAlign: "center",
     marginVertical: 16,
-    fontSize: 18,
+    fontSize: 25,
     fontFamily: 'serif',
     fontWeight: 'bold'
   },
   subTitle: {
     textAlign: "center",
-    fontSize: 12,
+    fontSize: 14,
     textDecorationLine: 'underline',
-    color: '#150E80'
+    color: theme.secondry
   },
   logo: {
     width: 100,
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     margin: 20,
     height: 50,
     borderRadius: 20,
-    backgroundColor: '#1C5EBD'
+    backgroundColor: theme.primary
   },
 });
 

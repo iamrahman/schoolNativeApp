@@ -7,7 +7,7 @@ const TeacherItem = ({data}) => {
         <View style={styles.row}>
             <Image
                 style={styles.profilImage}
-                source={{ uri:data.profile,}}/>
+                source={{ uri:data.profile}}/>
             <View>
                 <Text style={styles.fullName}>{data.full_name}</Text>  
                 <Text style={styles.email}>{data.email}</Text>  

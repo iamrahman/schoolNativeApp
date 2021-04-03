@@ -13,6 +13,7 @@ import AttandanceBar from "../../components/attandanceBar";
 import { ScreenName, theme } from "../../constants";
 import Font from "react-native-vector-icons/FontAwesome";
 import MaterialIcon from "react-native-vector-icons/MaterialCommunityIcons";
+import MaterialIcon2 from "react-native-vector-icons/MaterialIcons";
 
 const DashboardScreen = ({ navigation }) => {
   React.useEffect(
@@ -47,15 +48,15 @@ const DashboardScreen = ({ navigation }) => {
               style={styles.profilImage}
               source={{
                 uri:
-                  "https://i.pinimg.com/originals/48/35/b5/4835b5f9c52fd733eb26fb2c2b47bdc7.jpg",
+                  "https://static.geekyants.com/image-resize-cache/eyJpZCI6MTA3NSwidCI6ImZpdCIsInciOjIwMCwiaCI6MjAwLCJxIjo5MCwidiI6MX0=.png",
               }}
             />
           </View>
           <View>
-            <Text style={styles.name}>Anjali Sharma</Text>
+            <Text style={styles.name}>Inamur Rahman</Text>
           </View>
           <View>
-            <Text style={{ color: "#fff" }}>Class IX - A</Text>
+            <Text style={{ color: "#fff" }}>Class XII - B</Text>
           </View>
           <AttandanceBar />
           {/* <AnnouncmentBox /> */}
@@ -64,6 +65,7 @@ const DashboardScreen = ({ navigation }) => {
           <View style={styles.container}>
             <TouchableOpacity
               onPress={() => navigation.navigate(ScreenName.ATTANDANCE)}
+              activeOpacity={0.9}
             >
               <View style={styles.menuBox}>
                 <MaterialIcon
@@ -76,6 +78,7 @@ const DashboardScreen = ({ navigation }) => {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => navigation.navigate(ScreenName.EXAMS)}
+              activeOpacity={0.9}
             >
               <View style={styles.menuBox}>
                 <Font name="pencil-square-o" style={styles.icon} size={30} />
@@ -86,6 +89,7 @@ const DashboardScreen = ({ navigation }) => {
           <View style={styles.container}>
             <TouchableOpacity
               onPress={() => navigation.navigate(ScreenName.TEACHERS)}
+              activeOpacity={0.9}
             >
               <View style={styles.menuBox}>
                 <MaterialIcon
@@ -98,6 +102,7 @@ const DashboardScreen = ({ navigation }) => {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => navigation.navigate(ScreenName.RESULTS)}
+              activeOpacity={0.9}
             >
               <View style={styles.menuBox}>
                 <Font name="bar-chart" style={styles.icon} size={30} />
@@ -117,12 +122,20 @@ const DashboardScreen = ({ navigation }) => {
           </View>
           <View style={styles.container}>
             <View style={styles.menuBox}>
-              <Font name="paperclip" style={styles.icon} size={30} />
-              <Text style={styles.text}>Documents</Text>
+              <TouchableOpacity
+                onPress={() => navigation.navigate(ScreenName.EVENTS)}
+              >
+                <MaterialIcon2
+                  name="emoji-events"
+                  style={styles.icon}
+                  size={30}
+                />
+                <Text style={styles.text}>Events</Text>
+              </TouchableOpacity>
             </View>
             <View style={styles.menuBox}>
-              <Font name="phone" style={styles.icon} size={30} />
-              <Text style={styles.text}>Contact</Text>
+              <MaterialIcon2 name="headset-mic" style={styles.icon} size={30} />
+              <Text style={styles.text}>Help</Text>
             </View>
           </View>
         </View>
@@ -138,7 +151,7 @@ const styles = StyleSheet.create({
     alignItems: "stretch",
   },
   menuView: {
-    backgroundColor: "#fff",
+    backgroundColor: theme.primarylight,
     marginTop: 40,
     borderTopLeftRadius: 25,
     borderTopEndRadius: 25,
@@ -158,7 +171,7 @@ const styles = StyleSheet.create({
     margin: 10,
     minWidth: 160,
     borderRadius: 12,
-    elevation: 5,
+    elevation: 4,
   },
   icon: {
     color: "#fff",

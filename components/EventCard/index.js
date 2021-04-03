@@ -1,33 +1,23 @@
 import React from "react";
-import MaterialIcon2 from "react-native-vector-icons/MaterialIcons";
-import { Text, StyleSheet, View } from "react-native";
-const ExamBox = ({ data }) => {
+
+import { Text, StyleSheet, View, Image } from "react-native";
+const EventCard = ({ data }) => {
   return (
     <View style={styles.container}>
       <View style={styles.row}>
         <View>
           <Text style={styles.title}>{String(data.name).toUpperCase()}</Text>
         </View>
-        <View>
-          <Text style={styles.subTitle}>
-            Start Date : {data?.startDate ? data.startDate : "Not Declared"}
-          </Text>
+        <View style={{ alignItems: "center" }}>
+          <Image style={styles.cardImg} source={{ uri: data.image_url }} />
         </View>
         <View>
           <Text style={styles.subTitle}>
-            End Date : {data?.endDate ? data.endDate : "Not Declared"}
+            Event Date : {data?.startDate ? data.startDate : "Not Declared"}
           </Text>
         </View>
         <View>
-          <Text style={styles.download}>
-            {" "}
-            <MaterialIcon2
-              name="file-download"
-              style={{ color: "red" }}
-              size={17}
-            />{" "}
-            Download
-          </Text>
+          <Text style={styles.subTitle}>Event Organizer : Not Declared</Text>
         </View>
       </View>
     </View>
@@ -37,6 +27,7 @@ const ExamBox = ({ data }) => {
 const styles = StyleSheet.create({
   container: {
     padding: 3,
+    marginBottom: 10,
   },
   row: {
     flexDirection: "column",
@@ -47,7 +38,12 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 2, height: 2 },
     shadowOpacity: 0.8,
     shadowRadius: 2,
-    elevation: 2,
+    elevation: 4,
+  },
+  cardImg: {
+    width: 300,
+    height: 150,
+    flex: 1,
   },
   title: {
     marginStart: 20,
@@ -62,6 +58,7 @@ const styles = StyleSheet.create({
   },
   subTitle: {
     marginStart: 20,
+    padding: 5,
   },
   status: {
     textAlign: "center",
@@ -76,4 +73,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ExamBox;
+export default EventCard;
