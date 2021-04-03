@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, View, Text, FlatList } from "react-native";
 import ResultStatus from "../../../../components/resultStatus";
 import RNPickerSelect from "react-native-picker-select";
-import { AttandanceList, ExamList, ResultsList } from "../../../../constants/index";
+import { AttandanceList, ExamList, ResultsList, theme } from "../../../../constants/index";
 
 const ResultsScreen = () => {
   const [selectedValue, setSelectedValue] = useState("football");
@@ -65,7 +65,7 @@ const ResultsScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#1C5EBD",
+    backgroundColor: theme.primary,
   },
   item: {
     padding: 10,
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     height: 44,
   },
   listView: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: theme.white,
     paddingLeft: 20,
     paddingRight: 20,
     paddingTop: 10,

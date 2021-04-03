@@ -4,7 +4,7 @@ import { createStackNavigator, CardStyleInterpolators } from "@react-navigation/
 // components
 import LandingScreen from "../screens/landing";
 import AuthScreen from "../screens/auth";
-import { ScreenName } from "../constants";
+import { ScreenName, theme } from "../constants";
 import DashboardScreen from "../screens/dashboard";
 import TeachersScreen from "../screens/dashboard/pages/teachersList";
 import AttandanceScreen from "../screens/dashboard/pages/attandance";
@@ -48,7 +48,7 @@ const ApplicationRoutes = () => {
               shadowOpacity: 0, // this will hide the shadow of navbar
               backgroundColor: "#FFF",
             },
-            headerTintColor: "#1C5EBD",
+            headerTintColor: theme.primary,
           }}
         />
         <Stack.Screen
@@ -59,7 +59,7 @@ const ApplicationRoutes = () => {
             headerStyle: {
               elevation: 0,
               shadowOpacity: 0, // this will hide the shadow of navbar
-              backgroundColor: "#1C5EBD",
+              backgroundColor: theme.primary,
             },
             headerTintColor: "#fff",
           }}
@@ -72,7 +72,7 @@ const ApplicationRoutes = () => {
             headerStyle: {
               elevation: 0,
               shadowOpacity: 0,
-              backgroundColor: "#1C5EBD",
+              backgroundColor: theme.primary,
             },
             headerTintColor: "#FFF",
           }}
@@ -85,7 +85,7 @@ const ApplicationRoutes = () => {
             headerStyle: {
               elevation: 0,
               shadowOpacity: 0, // this will hide the shadow of navbar
-              backgroundColor: "#1C5EBD",
+              backgroundColor: theme.primary,
             },
             headerTintColor: "#fff",
           }}
@@ -98,7 +98,7 @@ const ApplicationRoutes = () => {
             headerStyle: {
               elevation: 0,
               shadowOpacity: 0, // this will hide the shadow of navbar
-              backgroundColor: "#1C5EBD",
+              backgroundColor: theme.primary,
             },
             headerTintColor: "#fff",
           }}
@@ -111,7 +111,7 @@ const ApplicationRoutes = () => {
             headerStyle: {
               elevation: 0,
               shadowOpacity: 0, // this will hide the shadow of navbar
-              backgroundColor: "#1C5EBD",
+              backgroundColor: theme.primary,
             },
             headerTintColor: "#fff",
           }}

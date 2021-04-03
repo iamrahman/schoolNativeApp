@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
+
 import 'react-native-gesture-handler';
 import { SafeAreaView, StyleSheet } from "react-native";
 import ApplicationRoutes from "./routes";

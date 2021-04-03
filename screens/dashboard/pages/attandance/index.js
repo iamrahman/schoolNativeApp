@@ -1,9 +1,9 @@
 import React from "react";
+
 import { StyleSheet, View, Text, FlatList } from "react-native";
-import AttandanceBar from "../../../../components/attandanceBar";
 import AttandanceStatus from "../../../../components/attandanceStatus";
 
-import { AttandanceList } from "../../../../constants/index";
+import { AttandanceList, theme } from "../../../../constants/index";
 
 const AttandanceScreen = () => {
   return (
@@ -26,7 +26,7 @@ const AttandanceScreen = () => {
         >
           83.34%
         </Text>
-        <Text style={{ textAlign: "center", fontSize: 15, padding: 20, color: '#FFFFFF' }}>
+        <Text style={{ textAlign: "center", fontSize: 15, padding: 20, color: theme.white }}>
           Students can able to see the attandance record of last 30 working days
         </Text>
       </View>
@@ -45,7 +45,7 @@ const AttandanceScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1C5EBD',
+    backgroundColor: theme.primary,
   },
   item: {
     padding: 10,
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     height: 44,
   },
   listView: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: theme.white,
     paddingLeft: 20,
     paddingRight: 20,
     paddingTop: 10,

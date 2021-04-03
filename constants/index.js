@@ -8,6 +8,12 @@ export const ScreenName = {
   RESULTS: "Results",
 };
 
+export const theme = {
+  primary : "#7868e6",
+  secondry: "#f34",
+  white: '#FFFFFF'
+}
+
 export const TeachersList = [
   {
     id: 1,

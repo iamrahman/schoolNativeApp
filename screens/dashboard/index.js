@@ -10,8 +10,7 @@ import {
   Alert,
 } from "react-native";
 import AttandanceBar from "../../components/attandanceBar";
-import AnnouncmentBox from "../../components/announcement";
-import { ScreenName } from "../../constants";
+import { ScreenName, theme } from "../../constants";
 import Font from "react-native-vector-icons/FontAwesome";
 import MaterialIcon from "react-native-vector-icons/MaterialCommunityIcons";
 
@@ -40,7 +39,7 @@ const DashboardScreen = ({ navigation }) => {
   );
 
   return (
-    <SafeAreaView style={{ backgroundColor: "#1C5EBD" }}>
+    <SafeAreaView style={{ backgroundColor: theme.primary }}>
       <ScrollView>
         <View style={styles.profileContainer}>
           <View>
@@ -108,7 +107,7 @@ const DashboardScreen = ({ navigation }) => {
           </View>
           <View style={styles.container}>
             <View style={styles.menuBox}>
-              <Font name="wechat" style={styles.icon} size={30} />
+              <MaterialIcon name="message" style={styles.icon} size={30} />
               <Text style={styles.text}>Messages</Text>
             </View>
             <View style={styles.menuBox}>
@@ -119,7 +118,7 @@ const DashboardScreen = ({ navigation }) => {
           <View style={styles.container}>
             <View style={styles.menuBox}>
               <Font name="paperclip" style={styles.icon} size={30} />
-              <Text style={styles.text}>Files</Text>
+              <Text style={styles.text}>Documents</Text>
             </View>
             <View style={styles.menuBox}>
               <Font name="phone" style={styles.icon} size={30} />
@@ -154,11 +153,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   menuBox: {
-    backgroundColor: "orangered",
+    backgroundColor: theme.secondry,
     height: 80,
     margin: 10,
     minWidth: 160,
-    borderRadius: 10,
+    borderRadius: 12,
+    elevation: 5,
   },
   icon: {
     color: "#fff",
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     height: 100,
     width: 100,
-    backgroundColor: "#070E96",
+    backgroundColor: theme.primary,
     marginTop: 30,
   },
 });

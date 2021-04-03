@@ -1,8 +1,9 @@
 import React from "react";
+
 import { StyleSheet, View, Text, FlatList } from "react-native";
 import ExamBox from "../../../../components/examBox";
 
-import { ExamList } from "../../../../constants/index";
+import { ExamList, theme } from "../../../../constants/index";
 
 const ExamScreen = () => {
   return (
@@ -51,7 +52,7 @@ const ExamScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#1C5EBD",
+    backgroundColor: theme.primary,
   },
   item: {
     padding: 10,
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
     height: 44,
   },
   listView: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: theme.white,
     paddingLeft: 20,
     paddingRight: 20,
     paddingTop: 10,

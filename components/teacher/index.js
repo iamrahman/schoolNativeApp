@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Text, StyleSheet, View, Image } from "react-native";
 const TeacherItem = ({data}) => {
   return (

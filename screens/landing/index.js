@@ -1,4 +1,5 @@
 import React from "react";
+
 import { View, Text, Button, StyleSheet, SafeAreaView, Image, TouchableOpacity } from "react-native";
 import { ScreenName } from "../../constants";
 
